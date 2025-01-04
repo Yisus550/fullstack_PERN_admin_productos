@@ -1,0 +1,25 @@
+{
+  "name": "rest_api_node_ts_server",
+  "version": "1.0.0",
+  "description": "REST API'S con Express y Typescript",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec npx ts-node src/index.ts"
+  },
+  "author": "Jesus Romero Arvizu",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "pg": "^8.13.1",
+    "pg-hstore": "^2.3.4",
+    "rest_api_node_ts_server": "file:",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "nodemon": "^3.1.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
