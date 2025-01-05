@@ -13,7 +13,6 @@ export async function concectDB() {
     console.error(colors.bgRed.white(`Error connecting to the database: ${error}`));
   }
 }
-
 concectDB();
 
 const server = express(); //* Create a new express application
