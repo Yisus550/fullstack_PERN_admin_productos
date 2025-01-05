@@ -17,6 +17,8 @@ concectDB();
 
 const server = express(); //* Create a new express application
 
+server.use(express.json()); //* Parse the request body as JSON
+
 server.use("/api/productos", router); //* Use the router in the server
 
 export default server;

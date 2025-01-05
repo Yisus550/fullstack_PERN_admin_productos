@@ -16,8 +16,9 @@ class Products extends Model {
   @Column({
     type: DataType.FLOAT(6, 2),
   })
-  prices: number;
+  price: number;
 
+  @Default(true)
   @Column({
     type: DataType.BOOLEAN(),
   })

@@ -1,16 +1,18 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
-    "target": "es6",
     "outDir": "./dist",
     "rootDir": "./src",
+    "lib": ["ESNext"],
+    "target": "es6",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNExt",
     "strict": false,
     "esModuleInterop": true,
-    "lib": ["ESNext"],
     "sourceMap": true,
     "declaration": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+
   },
   "include": ["src/**/*.ts"]
 }
