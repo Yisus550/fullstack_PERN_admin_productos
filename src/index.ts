@@ -1,6 +1,9 @@
+import colors from "colors";
 import server from "./server";
 
-server.listen(4000, () => {
+const port = process.env.PORT || 4000;
+
+server.listen(port, () => {
   //* Start the server
-  console.info("Server is running on http://localhost:4000");
+  console.info(colors.cyan.bold(`Server is running on http://localhost:${port}`));
 });

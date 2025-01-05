@@ -1,4 +1,5 @@
 import express from "express";
+import colors from "colors";
 import router from "./router";
 import db from "./config/db";
 
@@ -7,9 +8,9 @@ export async function concectDB() {
   try {
     await db.authenticate();
     db.sync();
-    console.info("Database connected successfully");
+    console.info(colors.blue("Database connected successfully."));
   } catch (error) {
-    console.error("Error connecting to the database: ", error);
+    console.error(colors.bgRed.white(`Error connecting to the database: ${error}`));
   }
 }
 
