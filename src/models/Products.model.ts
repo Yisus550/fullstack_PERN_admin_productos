@@ -11,18 +11,18 @@ class Products extends Model {
   @Column({
     type: DataType.STRING(100), //* The data type is a string with a maximum length of 100 characters.
   })
-  name: string;
+  declare name: string;
 
   @Column({
     type: DataType.FLOAT(6, 2),
   })
-  price: number;
+  declare price: number;
 
   @Default(true)
   @Column({
     type: DataType.BOOLEAN(),
   })
-  availability: boolean;
+  declare availability: boolean;
 }
 
 export default Products;
