@@ -1,7 +1,7 @@
 import swaggerJSDoc from "swagger-jsdoc";
 
-const options: swaggerJSDoc.Operation = {
-  swaggerDefinition: {
+const options: swaggerJSDoc.Options = {
+  definition: {
     openaip: "3.0.2",
     tags: [
       {

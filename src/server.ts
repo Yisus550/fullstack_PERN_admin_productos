@@ -1,6 +1,6 @@
 import express from "express";
 import colors from "colors";
-import swaggerUI from "swagger-ui-express";
+import swaggerUI, { setup } from "swagger-ui-express";
 import swaggerSpec from "./config/swagger";
 import router from "./router";
 import db from "./config/db";
