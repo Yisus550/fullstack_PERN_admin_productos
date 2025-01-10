@@ -1,5 +1,7 @@
 import express from "express";
 import colors from "colors";
+import swaggerUI from "swagger-ui-express";
+import swaggerSpec from "./config/swagger";
 import router from "./router";
 import db from "./config/db";
 
@@ -20,5 +22,7 @@ const server = express(); //* Create a new express application
 server.use(express.json()); //* Parse the request body as JSON
 
 server.use("/api/products", router); //* Use the router in the server
+
+server.use("/docs", swaggerUI.serve, swaggerUI.setup(swaggerSpec)); //* Use the swagger documentation
 
 export default server;
