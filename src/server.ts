@@ -1,5 +1,7 @@
 import express from "express";
 import colors from "colors";
+import cors, { type CorsOptions } from "cors";
+import morgan from "morgan";
 import swaggerUI, { setup } from "swagger-ui-express";
 import swaggerSpec from "./config/swagger";
 import router from "./router";
@@ -19,7 +21,21 @@ concectDB();
 
 const server = express(); //* Create a new express application
 
-server.use(express.json()); //* Parse the request body as JSON
+const corsOptions: CorsOptions = {
+  origin: (origin, callback) => {
+    if (origin === process.env.FRONTEND_URL) {
+      callback(null, true)
+    } else {
+      callback(new Error("Not allowed by CORS"));
+    }
+  },
+};
+
+server.use(cors(corsOptions)); //* Enable CORS
+
+server.use(express.json()); //* Parse request body as JSON
+
+server.use(morgan("dev")); //* Log requests to console
 
 server.use("/api/products", router); //* Use the router in the server
 
