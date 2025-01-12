@@ -24,9 +24,9 @@ const server = express(); //* Create a new express application
 const corsOptions: CorsOptions = {
   origin: (origin, callback) => {
     if (origin === process.env.FRONTEND_URL) {
-      callback(null, true)
+      callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error(`Not allowed by CORS from ${origin}`));
     }
   },
 };

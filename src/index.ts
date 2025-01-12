@@ -1,7 +1,7 @@
 import colors from "colors";
 import server from "./server";
 
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 7001;
 
 server.listen(port, () => {
   //* Start the server
