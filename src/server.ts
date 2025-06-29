@@ -12,9 +12,9 @@ export async function concectDB() {
   try {
     await db.authenticate();
     db.sync();
-    // console.info(colors.blue("Database connected successfully."));
+    console.info(colors.blue("Database connected successfully."));
   } catch (error) {
-    console.error(colors.bgRed.white(`Error connecting to the database`));
+    console.error(colors.red(`Error connecting to the database:`), error.message);
   }
 }
 concectDB();
