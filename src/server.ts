@@ -23,6 +23,8 @@ const server = express(); //* Create a new express application
 
 const corsOptions: CorsOptions = {
   origin: (origin, callback) => {
+    if (!origin) return callback(null, true); //* Allow requests with no origin (like Postman)
+    
     if (origin === process.env.FRONTEND_URL) {
       callback(null, true);
     } else {
